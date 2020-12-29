@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic QR Code
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="showCamera" (click)="closeCamera()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ng-container *ngIf="showIcon; else button">
+    <ion-icon class="frame" name="scan-outline"></ion-icon>
+  </ng-container>
+<ng-template #button>
+  <ion-item *ngIf="showText">
+    <ion-label>
+      <p>Texte du QR Code</p>
+      <h2><b>{{ textScanned }}</b></h2>
+    </ion-label>
+  </ion-item>
+  <ion-button expand="block" (click)="scanCode()" >
+    <ion-icon slot="start" name="scan-outline"></ion-icon>
+    Scanner un QR Code
+  </ion-button>
+</ng-template>
+</ion-content>
+
+  

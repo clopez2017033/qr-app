@@ -1,5 +1,7 @@
 {
   "name": "lectorQr",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
